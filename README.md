@@ -17,7 +17,7 @@ change it to:
 
     elm.addEventListener("onload", func, false, callback1, callback2);
     
-`callback1` will be called if event was not already present on the element. Otherwise, `callback2` will be called. In the former case, `callback1` is executed *after* executing `func`.
+`callback1` will be called if event was not already present on the element. Otherwise, `callback2` will be called. In the former case, `callback1` is executed *after* executing `func`. Make sure to `.bind()` both the callbacks in case `this` value is required, because otherwise the context of this would change.
 
 **Note:** in case element already had a listener for the said event, the new handler wil not be attached to the element.
 
