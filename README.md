@@ -7,7 +7,7 @@ Add this script at the very top of your js file:
 
 **[Live Demo](http://jsfiddle.net/y22a2rvh/)**
     
-## How to use it?
+## How to use?
 
 You will not need to make any major changes to your existing JS code. Wherever in your code, you have, say, this:
 
