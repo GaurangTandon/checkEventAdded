@@ -1,0 +1,1 @@
+!function(){function b(a,b){var c={},d=EventTarget.prototype[a+"EventListener"];return function(a,e,f,g,h){return c[a]==b||!b&&!c[a]?(h(),!1):(d.call(this,a,e,f),c[a]=b,g(),!0)}}EventTarget.prototype.addEventListener=b("add",!0),EventTarget.prototype.removeEventListener=b("remove",!1)}();
