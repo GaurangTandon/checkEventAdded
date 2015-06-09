@@ -1,13 +1,21 @@
 # checkEventAdded.js
-A nifty JavaScript snippet (= 685 chars minified) to check if an event has already been added to an element.
+A nifty JavaScript snippet (= 685 chars minified) that gives you two functions: i) `hasEvent(Element elm, String event)` ii) `getEvents(Element elm)`, along with a callback functionality for `add/RemoveEventListener`, modifying the prototype obviously.
 
-Add this script at the very top of your js file:
+To get started, just stick this code at the top of your script. **No dependencies**. At all. 
 
     var hasEvent,getEvents;!function(){function b(a,b,c){c?a.dataset.events+=","+b:a.dataset.events=a.dataset.events.replace(new RegExp(b),"")}function c(a,c){var d=EventTarget.prototype[a+"EventListener"];return function(a,e,f,g,h){this.dataset.events||(this.dataset.events="");var i=hasEvent(this,a);return c&&i||!c&&!i?(h&&h(),!1):(d.call(this,a,e,f),b(this,a,c),g&&g(),!0)}}hasEvent=function(a,b){var c=a.dataset.events;return c?new RegExp(b).test(c):!1},getEvents=function(a){return a.dataset.events.replace(/(^,+)|(,+$)/g,"").split(",").filter(function(a){return""!==a})},EventTarget.prototype.addEventListener=c("add",!0),EventTarget.prototype.removeEventListener=c("remove",!1)}();
 
 **[Live Demo](http://jsfiddle.net/vo51y90y/8/)**
     
-## How to use?
+### `hasEvent(Element elm, String event)`
+
+Returns `true` if `elm` has a listener for `event` attached to itself. Note that it does not work for events added in HTML markup and through the `elm.on_event = ` syntax.
+
+### `getEvents(Element elm)`
+
+Returns an array of strings containing all the names of the events which are attached to the element.
+
+
 
 You will not need to make any major changes to your existing JS code. Wherever in your code, you have, say, this:
 
