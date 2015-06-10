@@ -15,7 +15,7 @@ Returns `true` if `elm` has a listener for `event` attached to itself. Note that
 
 ### `getEvents(Nodet elm)`
 
-Returns an array of strings containing all the names of the events which are attached to the element.
+Returns an array of strings containing all the names of the events which are attached to the element. Note that it does not work for events added in HTML markup and through the `elm.on_event = ` syntax.
 
 ### Callback functionality for `add/RemoveEventListener`
 
