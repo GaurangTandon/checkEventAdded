@@ -1,7 +1,7 @@
 # checkEventAdded.js
 A nifty JavaScript snippet (= 685 chars minified) that gives you two functions: i) `hasEvent(Node elm, String event)` ii) `getEvents(Node elm)`, along with a callback functionality for `add/RemoveEventListener`, modifying the prototype obviously.
 
-To get started, just stick this code at the top of your script. **No dependencies**. At all. 
+To get started, just stick this code at the top of your script. **No library required**. Only pure vanilla JS is used.
 
     var hasEvent,getEvents;!function(){function b(a,b,c){c?a.dataset.events+=","+b:a.dataset.events=a.dataset.events.replace(new RegExp(b),"")}function c(a,c){var d=EventTarget.prototype[a+"EventListener"];return function(a,e,f,g,h){this.dataset.events||(this.dataset.events="");var i=hasEvent(this,a);return c&&i||!c&&!i?(h&&h(),!1):(d.call(this,a,e,f),b(this,a,c),g&&g(),!0)}}hasEvent=function(a,b){var c=a.dataset.events;return c?new RegExp(b).test(c):!1},getEvents=function(a){return a.dataset.events.replace(/(^,+)|(,+$)/g,"").split(",").filter(function(a){return""!==a})},EventTarget.prototype.addEventListener=c("add",!0),EventTarget.prototype.removeEventListener=c("remove",!1)}();
 
