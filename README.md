@@ -13,7 +13,7 @@ This script provides two global functions:
 
 Returns `true` if `elm` has a listener for `event` attached to itself. Note that it does not work for events added in HTML markup and through the `elm.on_event = ` syntax.
 
-### `getEvents(Nodet elm)`
+### `getEvents(Node elm)`
 
 Returns an array of strings containing all the names of the events which are attached to the element. Note that it does not work for events added in HTML markup and through the `elm.on_event = ` syntax.
 
