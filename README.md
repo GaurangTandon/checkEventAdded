@@ -30,7 +30,7 @@ Callbacks can be specified in the following manner:
 ## Unminified code
 
     var hasEvent, getEvents;
-    (function (window) {
+    (function () {
         hasEvent = function (elm, type) {
             var ev = elm.dataset.events;
             if (!ev) return false;
