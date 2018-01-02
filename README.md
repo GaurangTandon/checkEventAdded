@@ -1,5 +1,5 @@
 # checkEventAdded.js
-A nifty JavaScript snippet (= 685 chars minified) that gives you two functions: i) `hasEvent(Node elm, String event)` ii) `getEvents(Node elm)`, along with a callback functionality for `add/RemoveEventListener`, modifying the prototype obviously.
+A nifty JavaScript snippet (= 719 chars minified) that gives you two functions: i) `hasEvent(Node elm, String event)` ii) `getEvents(Node elm)`, along with a callback functionality for `add/RemoveEventListener`, modifying the prototype obviously.
 
 To get started, just stick this code at the top of your script. **No library required**. Only pure vanilla JS is used.
 
