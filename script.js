@@ -22,6 +22,7 @@ var hasEvent, getEvents;
         var f = EventTarget.prototype[name + "EventListener"];
 
         return function (type, callback, capture, cb1, cb2) {
+            if (!this.dataset) this.dataset = {};
             if (!this.dataset.events) this.dataset.events = "";
 
             var has = hasEvent(this, type);
